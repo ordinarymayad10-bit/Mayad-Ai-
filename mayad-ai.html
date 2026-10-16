@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090b18">
+<title>Mayad AI — All-in-One AI Tools</title>
+<style>
+:root{--bg:#090b18;--panel:#11152a;--panel2:#171c35;--text:#f4f5ff;--muted:#a6abc8;--line:#2a3153;--purple:#8b5cf6;--blue:#38bdf8;--pink:#ec4899;--green:#34d399}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 15% 0%,#20204b 0,transparent 32%),radial-gradient(circle at 100% 15%,#142b48 0,transparent 25%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}button,input,textarea,select{font:inherit}button{cursor:pointer}.wrap{max-width:1120px;margin:auto;padding:18px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0 22px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px;letter-spacing:-.5px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--purple),var(--blue));display:grid;place-items:center;font-size:22px;box-shadow:0 8px 25px #8b5cf644}.nav{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:#ffffff0a;color:var(--text);padding:10px 14px;border-radius:12px;font-weight:700}.btn.primary{border:0;background:linear-gradient(110deg,var(--purple),#5578f6);box-shadow:0 8px 24px #6754ed30}.btn:hover{filter:brightness(1.12)}.hero{padding:34px 0 24px;display:grid;grid-template-columns:1.25fr .75fr;gap:20px;align-items:center}.pill{display:inline-flex;gap:8px;align-items:center;border:1px solid #574b91;background:#8b5cf61c;color:#d9ceff;border-radius:99px;padding:7px 11px;font-size:12px;font-weight:800}.hero h1{font-size:clamp(34px,6vw,60px);line-height:1.06;letter-spacing:-2px;margin:17px 0}.gradient{background:linear-gradient(100deg,#c4b5fd,#67e8f9,#f0abfc);color:transparent;background-clip:text}.lead{color:var(--muted);line-height:1.8;max-width:610px}.heroCard,.panel,.tool,.modalCard{border:1px solid var(--line);background:linear-gradient(145deg,#171a34ed,#0e1224f5);border-radius:22px}.heroCard{padding:22px;box-shadow:0 20px 60px #0003}.orb{height:140px;border-radius:18px;background:radial-gradient(circle at 50% 40%,#9c7bff,transparent 27%),radial-gradient(circle at 35% 65%,#2879a9,transparent 30%),linear-gradient(135deg,#28204f,#10192f);display:grid;place-items:center;font-size:56px;margin-bottom:16px}.heroStats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{background:#ffffff08;border:1px solid #ffffff0d;border-radius:13px;padding:12px 8px;text-align:center}.stat strong{display:block;font-size:20px}.stat span{font-size:11px;color:var(--muted)}.sectionHead{display:flex;justify-content:space-between;gap:10px;align-items:end;margin:28px 0 14px}.sectionHead h2{margin:0;font-size:24px}.sectionHead p{margin:5px 0 0;color:var(--muted);font-size:13px}.search{width:100%;max-width:280px;background:#11152a;border:1px solid var(--line);border-radius:12px;padding:12px;color:var(--text)}.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tool{padding:18px;transition:.2s;cursor:pointer;min-height:176px}.tool:hover{transform:translateY(-3px);border-color:#7160d9;box-shadow:0 12px 32px #0003}.toolIcon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;font-size:24px;background:linear-gradient(135deg,#8b5cf633,#38bdf833);border:1px solid #ffffff14}.tool h3{margin:13px 0 6px;font-size:17px}.tool p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}.tag{display:inline-block;color:#c4b5fd;background:#8b5cf61c;border-radius:7px;padding:4px 7px;font-size:10px;margin-top:12px}.panel{padding:20px;margin-top:24px}.panel h2{margin:0 0 8px}.panel p{color:var(--muted);line-height:1.7}.featureGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.feature{background:#ffffff07;border:1px solid #ffffff0d;border-radius:13px;padding:14px}.feature b{display:block;margin-bottom:5px}.feature span{font-size:12px;color:var(--muted)}footer{padding:32px 0 16px;color:var(--muted);font-size:12px;text-align:center}.hidden{display:none!important}.modal{position:fixed;inset:0;background:#03040bdc;backdrop-filter:blur(8px);display:grid;place-items:center;padding:15px;z-index:10;overflow:auto}.modalCard{width:min(100%,520px);padding:22px;max-height:92vh;overflow:auto}.modalHead{display:flex;justify-content:space-between;align-items:center;gap:12px}.modalHead h2{margin:0}.close{border:1px solid var(--line);background:#ffffff0a;color:white;border-radius:10px;padding:7px 11px}.field{display:block;margin:14px 0}.field span{display:block;color:var(--muted);font-size:13px;margin-bottom:7px}.field input,.field textarea,.field select{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#090d1e;color:var(--text);outline:none}.field textarea{min-height:105px;resize:vertical}.field input:focus,.field textarea:focus{border-color:var(--purple)}.rowBtns{display:flex;gap:9px;flex-wrap:wrap}.notice{font-size:12px;color:var(--muted);line-height:1.7;padding:12px;border-radius:12px;background:#ffffff08;border:1px solid #ffffff0c}.output{white-space:pre-wrap;background:#080c1a;border:1px solid var(--line);padding:14px;border-radius:12px;line-height:1.7;min-height:55px;overflow-wrap:anywhere}.adminList{display:grid;gap:8px}.userRow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px;border:1px solid var(--line);border-radius:12px;background:#ffffff05}.small{font-size:12px;color:var(--muted)}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#202747;border:1px solid #4d5681;color:white;padding:12px 16px;border-radius:12px;z-index:30;max-width:90%;box-shadow:0 8px 28px #0008}.account{display:flex;gap:8px;align-items:center}.userBadge{color:#d8d2ff;background:#8b5cf625;border:1px solid #574b91;padding:8px 10px;border-radius:10px;font-size:12px}.previewImage{max-width:100%;max-height:320px;border-radius:12px;display:block;margin:10px auto}.empty{padding:22px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:14px}.heroCard{max-width:none}.tools{grid-template-columns:repeat(2,minmax(0,1fr))}.featureGrid{grid-template-columns:1fr}.sectionHead{align-items:stretch;flex-direction:column}.search{max-width:none}.top{align-items:flex-start}.nav{justify-content:flex-end}.brand{font-size:17px}.hero h1{letter-spacing:-1px}}
+@media(max-width:430px){.wrap{padding:13px}.tools{grid-template-columns:1fr}.tool{min-height:0}.top{flex-direction:column}.nav{width:100%}.nav .btn{flex:1}.hero h1{font-size:39px}.heroCard{padding:15px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><div class="logo">✦</div><span>Mayad <span class="gradient">AI</span></span></div>
+    <div class="nav" id="nav">
+      <button class="btn" onclick="openModal('loginModal')">Login</button>
+      <button class="btn primary" onclick="openModal('registerModal')">Get Started</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <span class="pill">✦ YOUR CREATIVE AI WORKSPACE</span>
+      <h1>One place.<br><span class="gradient">Endless ideas.</span></h1>
+      <p class="lead">AI tools for writing, creativity, productivity and everyday work. বাংলা ও English—সহজভাবে, এক জায়গায়।</p>
+      <div class="rowBtns" style="margin-top:20px">
+        <button class="btn primary" onclick="scrollToTools()">Explore AI Tools ↗</button>
+        <button class="btn" onclick="openModal('registerModal')">Create free account</button>
+      </div>
+    </div>
+    <div class="heroCard">
+      <div class="orb">✧</div>
+      <div style="font-weight:800;font-size:18px;margin-bottom:6px">Your AI workspace</div>
+      <p class="small" style="line-height:1.7">Write smarter, create faster, and turn your ideas into something useful.</p>
+      <div class="heroStats">
+        <div class="stat"><strong>6+</strong><span>AI tools</span></div>
+        <div class="stat"><strong>2</strong><span>Languages</span></div>
+        <div class="stat"><strong>24/7</strong><span>Access</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="toolsSection">
+    <div class="sectionHead">
+      <div><h2>Explore tools</h2><p>Pick a tool and get started.</p></div>
+      <input class="search" id="toolSearch" placeholder="🔎 Search tools..." oninput="filterTools(this.value)">
+    </div>
+    <div class="tools" id="toolsGrid">
+      <article class="tool" data-search="chat ai assistant বাংলা english" onclick="openTool('chat')"><div class="toolIcon">✦</div><h3>AI Chat</h3><p>Ask questions, brainstorm ideas, and get writing help.</p><span class="tag">CHAT ASSISTANT</span></article>
+      <article class="tool" data-search="caption social media facebook instagram bio post" onclick="openTool('caption')"><div class="toolIcon">✍️</div><h3>Caption & Bio</h3><p>Create captions, bios, post ideas and hashtags.</p><span class="tag">SOCIAL CONTENT</span></article>
+      <article class="tool" data-search="cv resume job application letter" onclick="openTool('cv')"><div class="toolIcon">📄</div><h3>CV & Application</h3><p>Draft a professional CV summary or job application.</p><span class="tag">CAREER</span></article>
+      <article class="tool" data-search="translate translation bangla english language" onclick="openTool('translate')"><div class="toolIcon">🌐</div><h3>Translator</h3><p>Prepare a translation draft between Bangla and English.</p><span class="tag">LANGUAGE</span></article>
+      <article class="tool" data-search="photo image generator prompt art" onclick="openTool('image')"><div class="toolIcon">🎨</div><h3>AI Image Studio</h3><p>Write an image prompt and open a compatible image service.</p><span class="tag">CREATIVE</span></article>
+      <article class="tool" data-search="summarize rewrite grammar text" onclick="openTool('writer')"><div class="toolIcon">🪄</div><h3>Text Assistant</h3><p>Rewrite, polish or summarize text with an AI prompt.</p><span class="tag">WRITING</span></article>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Made for everyday creativity</h2>
+    <p>Mayad AI brings useful tools together in a mobile-friendly workspace. Start with the demo tools, then connect an AI provider to enable real AI responses.</p>
+    <div class="featureGrid">
+      <div class="feature"><b>📱 Mobile-first</b><span>Designed for Android phones and small screens.</span></div>
+      <div class="feature"><b>🌍 Bangla + English</b><span>Friendly interface for bilingual users.</span></div>
+      <div class="feature"><b>🔐 Account demo</b><span>Prototype login and admin view for testing.</span></div>
+    </div>
+  </section>
+  <footer>© <span id="year"></span> Mayad AI · Built to help you create more.<br>Demo template — connect a secure backend before publishing real accounts.</footer>
+</div>
+
+<!-- Login modal -->
+<div class="modal hidden" id="loginModal" role="dialog" aria-modal="true">
+  <div class="modalCard"><div class="modalHead"><h2>Welcome back</h2><button class="close" onclick="closeModal('loginModal')">✕</button></div>
+    <p class="small">Sign in to your Mayad AI demo account.</p>
+    <form onsubmit="loginUser(event)">
+      <label class="field"><span>Email or username</span><input id="loginName" required autocomplete="username" placeholder="you@example.com"></label>
+      <label class="field"><span>Password</span><input id="loginPassword" type="password" required autocomplete="current-password" placeholder="Your password"></label>
+      <button class="btn primary" style="width:100%" type="submit">Login</button>
+    </form>
+    <p class="notice">Admin demo login: <b>admin@mayadai.demo</b> / <b>MayadDemo123!</b><br>Change/remove this demo before publishing. This is not secure authentication.</p>
+    <p class="small">New here? <a href="#" onclick="switchModal('loginModal','registerModal');return false" style="color:#c4b5fd">Create an account</a></p>
+  </div>
+</div>
+
+<!-- Register modal -->
+<div class="modal hidden" id="registerModal" role="dialog" aria-modal="true">
+  <div class="modalCard"><div class="modalHead"><h2>Create account</h2><button class="close" onclick="closeModal('registerModal')">✕</button></div>
+    <p class="small">Create a local demo profile on this device/browser.</p>
+    <form onsubmit="registerUser(event)">
+      <label class="field"><span>Full name</span><input id="regName" required maxlength="60" placeholder="Your name"></label>
+      <label class="field"><span>Email</span><input id="regEmail" type="email" required maxlength="120" placeholder="you@example.com"></label>
+      <label class="field"><span>Password (at least 6 characters)</span><input id="regPassword" type="password" minlength="6" required autocomplete="new-password" placeholder="Create password"></label>
+      <button class="btn primary" style="width:100%" type="submit">Create free account</button>
+    </form>
+    <p class="notice">Demo only: accounts are saved in this browser's local storage. They do not sync to other devices and are not protected like real online accounts.</p>
+  </div>
+</div>
+
+<!-- Tool modal -->
+<div class="modal hidden" id="toolModal" role="dialog" aria-modal="true">
+  <div class="modalCard"><div class="modalHead"><h2 id="toolTitle">AI Tool</h2><button class="close" onclick="closeModal('toolModal')">✕</button></div>
+    <p id="toolDescription" class="small"></p>
+    <div id="toolFields"></div>
+    <div class="rowBtns" style="margin-top:12px"><button class="btn primary" id="toolAction" onclick="runTool()">Generate draft</button><button class="btn" onclick="clearTool()">Clear</button></div>
+    <div id="toolResultWrap" class="hidden" style="margin-top:16px"><div class="sectionHead" style="margin:0 0 8px"><b>Result / prompt</b><button class="btn" onclick="copyResult()">Copy</button></div><div id="toolResult" class="output"></div><div id="imageLinks" class="rowBtns" style="margin-top:10px"></div></div>
+    <p class="notice" style="margin-top:15px">This HTML demo does not call a real AI API yet. It prepares a useful draft/prompt locally. To enable real AI chat, image generation and translation, connect a secure backend/API.</p>
+  </div>
+</div>
+
+<!-- Account modal -->
+<div class="modal hidden" id="accountModal" role="dialog" aria-modal="true">
+  <div class="modalCard"><div class="modalHead"><h2 id="accountTitle">My account</h2><button class="close" onclick="closeModal('accountModal')">✕</button></div><div id="accountBody"></div></div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+<script>
+const $ = id => document.getElementById(id);
+const ADMIN_EMAIL = 'admin@mayadai.demo';
+const ADMIN_PASSWORD = 'MayadDemo123!';
+let currentTool = 'chat';
+let toastTimer;
+$('year').textContent = new Date().getFullYear();
+
+function safeParse(value, fallback){try{return JSON.parse(value)||fallback}catch(e){return fallback}}
+function getUsers(){return safeParse(localStorage.getItem('mayad_users'),[])}
+function saveUsers(users){localStorage.setItem('mayad_users',JSON.stringify(users))}
+function getSession(){return safeParse(sessionStorage.getItem('mayad_session'),null)}
+function setSession(user){sessionStorage.setItem('mayad_session',JSON.stringify(user))}
+function clearSession(){sessionStorage.removeItem('mayad_session')}
+function showToast(msg){$('toast').textContent=msg;$('toast').classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.add('hidden'),3000)}
+function openModal(id){$(id).classList.remove('hidden')}
+function closeModal(id){$(id).classList.add('hidden')}
+function switchModal(from,to){closeModal(from);openModal(to)}
+function scrollToTools(){$('toolsSection').scrollIntoView({behavior:'smooth'})}
+function refreshNav(){
+ const s=getSession(), nav=$('nav');
+ if(!s){nav.innerHTML='<button class="btn" onclick="openModal(\\'loginModal\\')">Login</button><button class="btn primary" onclick="openModal(\\'registerModal\\')">Get Started</button>';return}
+ nav.innerHTML=`<span class="userBadge">Hi, ${escapeHTML(s.name||'User')}</span><button class="btn" onclick="openAccount()">My Account</button>${s.role==='admin'?'<button class="btn" onclick="openAdmin()">Admin</button>':''}<button class="btn" onclick="logoutUser()">Logout</button>`;
+}
+function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function loginUser(e){
+ e.preventDefault();const email=$('loginName').value.trim().toLowerCase(),password=$('loginPassword').value;
+ if(email===ADMIN_EMAIL&&password===ADMIN_PASSWORD){setSession({email,name:'Admin',role:'admin'});closeModal('loginModal');refreshNav();showToast('Admin demo login successful');return}
+ const user=getUsers().find(u=>u.email.toLowerCase()===email&&u.password===password);
+ if(!user){showToast('Login failed. Check your details.');return}
+ setSession({email:user.email,name:user.name,role:'user'});closeModal('loginModal');refreshNav();showToast('Login successful');
+}
+function registerUser(e){
+ e.preventDefault();const name=$('regName').value.trim(),email=$('regEmail').value.trim().toLowerCase(),password=$('regPassword').value;
+ if(password.length<6){showToast('Password must be at least 6 characters.');return}
+ if(email===ADMIN_EMAIL||getUsers().some(u=>u.email.toLowerCase()===email)){showToast('This email is already registered.');return}
+ const users=getUsers();users.push({name,email,password,createdAt:new Date().toISOString()});saveUsers(users);
+ setSession({email,name,role:'user'});closeModal('registerModal');refreshNav();showToast('Account created on this device');
+}
+function logoutUser(){clearSession();refreshNav();showToast('Logged out')}
+function openAccount(){
+ const s=getSession();if(!s)return openModal('loginModal');
+ $('accountTitle').textContent='My account';
+ const users=getUsers(),u=users.find(x=>x.email===s.email);
+ $('accountBody').innerHTML=`<div class="feature" style="margin:14px 0"><b>${escapeHTML(s.name)}</b><span>${escapeHTML(s.email)} · ${escapeHTML(s.role)}</span></div><h3>My saved drafts</h3><div id="savedDrafts" class="adminList"></div><p class="small">Drafts are stored in this browser only.</p>`;
+ const drafts=s.role==='admin'?[]:safeParse(localStorage.getItem('mayad_drafts_'+s.email),[]);
+ const box=$('savedDrafts');
+ if(!drafts.length)box.innerHTML='<div class="empty">No saved drafts yet. Create a tool result and save it here.</div>';
+ else box.innerHTML=drafts.map((d,i)=>`<div class="userRow"><div><b>${escapeHTML(d.title)}</b><div class="small">${escapeHTML(d.date)}</div></div><button class="btn" onclick="viewDraft(${i})">View</button></div>`).join('');
+ openModal('accountModal');
+}
+function saveDraft(title,content){
+ const s=getSession();if(!s||s.role==='admin'){showToast('Login as a user to save drafts.');return}
+ const key='mayad_drafts_'+s.email,drafts=safeParse(localStorage.getItem(key),[]);
+ drafts.unshift({title,content,date:new Date().toLocaleString()});localStorage.setItem(key,JSON.stringify(drafts.slice(0,50)));showToast('Draft saved to this browser');
+}
+function viewDraft(i){const s=getSession();const ds=safeParse(localStorage.getItem('mayad_drafts_'+s.email),[]);if(!ds[i])return; $('accountBody').innerHTML=`<button class="btn" onclick="openAccount()">← Back to account</button><h3>${escapeHTML(ds[i].title)}</h3><div class="output">${escapeHTML(ds[i].content)}</div><button class="btn" style="margin-top:10px" onclick="GenCopy(${JSON.stringify(ds[i].content).replace(/</g,'\\u003c')})">Copy draft</button>`}
+function GenCopy(text){navigator.clipboard?.writeText(text).then(()=>showToast('Copied')).catch(()=>showToast('Copy not supported; select the text manually'))}
+function openAdmin(){
+ const s=getSession();if(!s||s.role!=='admin'){showToast('Admin login required');return}
+ $('accountTitle').textContent='Admin dashboard';
+ const users=getUsers();
+ $('accountBody').innerHTML=`<div class="heroStats" style="margin:14px 0"><div class="stat"><strong>${users.length}</strong><span>Registered demo users</span></div><div class="stat"><strong>6</strong><span>Tools</span></div><div class="stat"><strong>Local</strong><span>Storage</span></div></div><p class="notice">This admin dashboard only manages demo users saved in this browser. It cannot see users from other devices or securely manage a live website.</p><h3>Registered users</h3><div class="adminList">${users.length?users.map((u,i)=>`<div class="userRow"><div><b>${escapeHTML(u.name)}</b><div class="small">${escapeHTML(u.email)}</div></div><button class="btn" onclick="deleteDemoUser(${i})">Delete</button></div>`).join(''):'<div class="empty">No users registered in this browser.</div>'}</div><button class="btn" style="margin-top:14px" onclick="exportUsers()">Export demo user list</button>`;
+ openModal('accountModal');
+}
+function deleteDemoUser(i){const users=getUsers();if(!users[i])return;if(!confirm('Delete this demo user and their local drafts?'))return;const email=users[i].email;users.splice(i,1);saveUsers(users);localStorage.removeItem('mayad_drafts_'+email);openAdmin();showToast('Demo user deleted')}
+function exportUsers(){const blob=new Blob([JSON.stringify(getUsers().map(u=>({name:u.name,email:u.email,createdAt:u.createdAt})),null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='mayad-demo-users.json';a.click();URL.revokeObjectURL(a.href)}
+const toolInfo={
+ chat:{title:'AI Chat',desc:'Write a question or describe what you need help with.',fields:[{id:'main',label:'Your message',type:'textarea',placeholder:'Ask anything…'}],button:'Prepare prompt'},
+ caption:{title:'Caption & Bio Generator',desc:'Choose a platform and describe your post.',fields:[{id:'platform',label:'Platform',type:'select',options:['Facebook','Instagram','TikTok','YouTube','LinkedIn']},{id:'tone',label:'Tone',type:'select',options:['Friendly','Funny','Professional','Emotional','Inspirational']},{id:'main',label:'Topic or photo description',type:'textarea',placeholder:'Describe the post or photo…'}],button:'Generate caption prompt'},
+ cv:{title:'CV & Application Helper',desc:'Add basic details to prepare a draft. Check all details before use.',fields:[{id:'kind',label:'Document',type:'select',options:['CV summary','Job application','Cover letter']},{id:'main',label:'Your education, skills and job target',type:'textarea',placeholder:'Example: Class 10, shop assistant job, customer service skills…'}],button:'Prepare document draft'},
+ translate:{title:'Translation Helper',desc:'Prepare a translation request. A real translation requires an AI/API connection.',fields:[{id:'direction',label:'Translate',type:'select',options:['Bangla to English','English to Bangla']},{id:'main',label:'Text to translate',type:'textarea',placeholder:'Paste your text here…'}],button:'Prepare translation prompt'},
+ image:{title:'AI Image Studio',desc:'Create a detailed prompt and open an external image service.',fields:[{id:'style',label:'Image style',type:'select',options:['Photorealistic','3D illustration','Anime','Logo design','Poster design','Cinematic']},{id:'main',label:'Describe the image',type:'textarea',placeholder:'Example: futuristic purple AI logo with glowing stars…'}],button:'Create image prompt'},
+ writer:{title:'Text Assistant',desc:'Prepare a writing instruction for an AI model.',fields:[{id:'action',label:'Task',type:'select',options:['Rewrite clearly','Fix grammar','Summarize','Make professional','Simplify for beginners']},{id:'main',label:'Your text',type:'textarea',placeholder:'Paste text here…'}],button:'Prepare writing prompt'}
+};
+function openTool(key){
+ currentTool=key;const t=toolInfo[key];$('toolTitle').textContent=t.title;$('toolDescription').textContent=t.desc;
+ $('toolFields').innerHTML=t.fields.map(f=>`<label class="field"><span>${f.label}</span>${f.type==='select'?`<select id="field_${f.id}">${f.options.map(o=>`<option>${o}</option>`).join('')}</select>`:`<textarea id="field_${f.id}" placeholder="${f.placeholder||''}"></textarea>`}</label>`).join('');
+ $('toolAction').textContent=t.button;$('toolResultWrap').classList.add('hidden');$('imageLinks').innerHTML='';openModal('toolModal');
+}
+function runTool(){
+ const t=toolInfo[currentTool],get=id=>($('field_'+id)?.value||'').trim(),main=get('main');
+ if(!main){showToast('Please enter some details first.');return}
+ let result='';
+ if(currentTool==='chat')result='Act as a helpful bilingual AI assistant. Reply clearly in the user’s preferred language.\n\nUser request:\n'+main;
+ if(currentTool==='caption')result=`Create a ${get('tone').toLowerCase()} ${get('platform')} caption for this topic: ${main}\nInclude a natural caption, suitable emojis if appropriate, and relevant hashtags. Provide Bangla and English versions.`;
+ if(currentTool==='cv')result=`Help draft a ${get('kind')} using only the details below. Do not invent qualifications or experience. Use clear professional language and mark missing details for the user to fill in.\n\nDetails:\n${main}`;
+ if(currentTool==='translate')result=`Translate the following text: ${get('direction')}. Preserve the original meaning and tone. Return only the translation unless a phrase needs clarification.\n\n${main}`;
+ if(currentTool==='image')result=`Create a ${get('style').toLowerCase()} image using this description. High quality composition, clear subject, polished lighting, no unwanted text: ${main}`;
+ if(currentTool==='writer')result=`Task: ${get('action')}. Keep the original meaning and do not add unsupported facts.\n\nText:\n${main}`;
+ $('toolResult').textContent=result;$('toolResultWrap').classList.remove('hidden');
+ $('imageLinks').innerHTML=currentTool==='image'?'<a class="btn primary" href="https://www.bing.com/images/create" target="_blank" rel="noopener">Open Image Creator ↗</a><a class="btn" href="https://huggingface.co/spaces" target="_blank" rel="noopener">Explore AI demos ↗</a>':'<button class="btn" onclick="saveCurrentDraft()">Save draft</button>';
+ if(currentTool!=='image')$('imageLinks').insertAdjacentHTML('beforeend','<button class="btn" onclick="openChatGPT()">Open ChatGPT ↗</button>');
+}
+function openChatGPT(){window.open('https://chatgpt.com/','_blank','noopener')}
+function saveCurrentDraft(){const s=getSession();if(!s){showToast('Login first to save your draft.');openModal('loginModal');return}saveDraft(toolInfo[currentTool].title,$('toolResult').textContent)}
+function copyResult(){GenCopy($('toolResult').textContent)}
+function clearTool(){const t=toolInfo[currentTool];t.fields.forEach(f=>{const el=$('field_'+f.id);if(el)el.value=''});$('toolResultWrap').classList.add('hidden')}
+function filterTools(q){q=q.toLowerCase();document.querySelectorAll('.tool').forEach(el=>el.classList.toggle('hidden',!el.dataset.search.includes(q)||!((el.innerText+' '+el.dataset.search).toLowerCase().includes(q))))}
+document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.add('hidden')}));
+refreshNav();
+</script>
+</body>
+</html>
