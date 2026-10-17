@@ -217,8 +217,21 @@ function clearTool(){const t=toolInfo[currentTool];t.fields.forEach(f=>{const el
 function filterTools(q){q=q.toLowerCase();document.querySelectorAll('.tool').forEach(el=>el.classList.toggle('hidden',!el.dataset.search.includes(q)||!((el.innerText+' '+el.dataset.search).toLowerCase().includes(q))))}
 document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.add('hidden')}));
 refreshNav();
+
+async function askMayadAI(message) {
+  const response = await fetch("/.netlify/functions/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message })
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.error || "AI request failed");
+  }
+
+  return data.reply;
+}
 </script>
 </body>
-<script>
-</script>
-</html>
