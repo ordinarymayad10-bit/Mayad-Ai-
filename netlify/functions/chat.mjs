@@ -1,37 +1,33 @@
 
-export default async (request) => {
-  if (request.method !== "POST") {
+export default async (req) => {
+  const headers = {
+    "Content-Type": "application/json"
+  };
+
+  if (req.method !== "POST") {
     return new Response(
-      JSON.stringify({ error: "POST method required" }),
-      {
-        status: 405,
-        headers: { "Content-Type": "application/json" }
-      }
+      JSON.stringify({ error: "POST request required" }),
+      { status: 405, headers }
+    );
+  }
+
+  const token = process.env.HF_TOKEN;
+
+  if (!token) {
+    return new Response(
+      JSON.stringify({ error: "Netlify-তে HF_TOKEN সেট করা নেই" }),
+      { status: 500, headers }
     );
   }
 
   try {
-    const { message } = await request.json();
+    const body = await req.json();
+    const message = String(body.message || "").trim();
 
-    if (!message || typeof message !== "string") {
+    if (!message) {
       return new Response(
-        JSON.stringify({ error: "Message is required" }),
-        {
-          status: 400,
-          headers: { "Content-Type": "application/json" }
-        }
-      );
-    }
-
-    const token = process.env.HF_TOKEN;
-
-    if (!token) {
-      return new Response(
-        JSON.stringify({ error: "HF_TOKEN is not configured" }),
-        {
-          status: 500,
-          headers: { "Content-Type": "application/json" }
-        }
+        JSON.stringify({ error: "Message লিখুন" }),
+        { status: 400, headers }
       );
     }
 
@@ -40,16 +36,13 @@ export default async (request) => {
       {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${token}`,
+          "Authorization": `Bearer ${token}`,
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          model: "Qwen/Qwen2.5-7B-Instruct:fastest",
+          model: "HuggingFaceH4/zephyr-7b-beta",
           messages: [
-            {
-              role: "user",
-              content: message.slice(0, 4000)
-            }
+            { role: "user", content: message }
           ],
           max_tokens: 500
         })
@@ -61,30 +54,23 @@ export default async (request) => {
     if (!response.ok) {
       return new Response(
         JSON.stringify({
-          error: data.error || "AI provider request failed"
+          error: data.error || `AI service error: ${response.status}`
         }),
-        {
-          status: response.status,
-          headers: { "Content-Type": "application/json" }
-        }
+        { status: 502, headers }
       );
     }
 
     return new Response(
       JSON.stringify({
-        reply: data.choices?.[0]?.message?.content || "No response received"
+        reply: data.choices?.[0]?.message?.content || "AI উত্তর দিতে পারেনি।"
       }),
-      {
-        headers: { "Content-Type": "application/json" }
-      }
+      { status: 200, headers }
     );
-  } catch {
+
+  } catch (error) {
     return new Response(
-      JSON.stringify({ error: "Request failed. Please try again." }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" }
-      }
+      JSON.stringify({ error: "সার্ভারে সমস্যা হয়েছে। আবার চেষ্টা করুন।" }),
+      { status: 500, headers }
     );
   }
 };
